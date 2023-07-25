@@ -322,43 +322,7 @@ local function grabFlag()
     end
 end
 
-local function Lowest()
-    LowestHealth = 99
-    LowestUnit = player
-    LowestPetHealth = 100
-    LowestPetUnit = player
-    SecondLowestHealth = 100
-    SecondLowestUnit = player
-    LowestActualHealth = 200000
-    LowestActualUnit = nil
-    piFriend = player
-    local badDebuff = {"Forgeborne Reveries", "Cyclone", "Shadowy Duel", 203337, 221527}
-    local badBuff = {"Alter Time", "Spirit of Redemption", "Podtender", "Forgeborne Reveries"}
-    if player.debuff("Shadowy Duel") then
-        LowestUnit = player
-        SecondLowestUnit = player
-        return
-    end
-    awful.fullGroup.loop(function(unit, i, uptime)
-        if not player.combat and unit.isUnit(player) then return end
-        if not unit.dead and not unit.debuffFrom(badDebuff) and not unit.buffFrom(badBuff) then
-            if unit.hp < LowestHealth then
-                SecondLowestHealth = LowestHealth
-                SecondLowestUnit = LowestUnit
-                LowestHealth = unit.hp
-                LowestUnit = unit
-            end
-            if unit.hp > LowestHealth and unit.hp < SecondLowestHealth then
-                SecondLowestHealth = unit.hp
-                SecondLowestUnit = unit
-            end
-            if not unit.isUnit(player) and unit.health < LowestActualHealth then
-                LowestActualHealth = unit.health
-                LowestActualUnit = unit
-            end
-        end
-    end)
-end
+--removed from open source
 
 local function LowestEnemy()
     LowestHealthEnemy = 100

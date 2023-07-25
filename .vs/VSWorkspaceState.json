@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\bots",
+    "\\druid-retail",
+    "\\evoker-retail",
+    "\\mage-retail",
+    "\\shaman-retail",
+    "\\warlock-retail",
+    "\\XDpriest-retail"
+  ],
+  "SelectedNode": "\\evoker-retail\\preservation-retail.lua",
+  "PreviewInSolutionExplorer": false
+}
